@@ -21,7 +21,6 @@ public class OrderClientSimulator {
     private static WarehouseGrpc.WarehouseBlockingStub deposito2Stub;
 
     public static void main(String[] args) {
-        // Criação dos canais e stubs
         ManagedChannel channel1 = ManagedChannelBuilder.forAddress("localhost", 50052).usePlaintext().build();
         ManagedChannel channel2 = ManagedChannelBuilder.forAddress("localhost", 50053).usePlaintext().build();
 
@@ -85,13 +84,11 @@ public class OrderClientSimulator {
         System.out.print("Quantidade: ");
         int qtd = Integer.parseInt(scanner.nextLine());
 
-        // Cria pedido
         PedidoRequest request = PedidoRequest.newBuilder()
             .setProdutoId(codigo)
             .setQuantidade(qtd)
             .build();
 
-        // Cria canal e stub do OrderManager
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
         OrderManagerGrpc.OrderManagerBlockingStub stub = OrderManagerGrpc.newBlockingStub(channel);
 

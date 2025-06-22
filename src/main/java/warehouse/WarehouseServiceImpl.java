@@ -15,7 +15,7 @@ import io.grpc.stub.StreamObserver;
 public class WarehouseServiceImpl extends WarehouseImplBase {
 
     private final String nomeDeposito;
-    private final Map<String, Integer> estoque;  // produtoId -> quantidade
+    private final Map<String, Integer> estoque;
 
     public WarehouseServiceImpl(String nomeDeposito) {
         this.nomeDeposito = nomeDeposito;
@@ -78,8 +78,6 @@ public class WarehouseServiceImpl extends WarehouseImplBase {
         responseObserver.onCompleted();
     }
 
-
-    // Novo método implementado para consultar carga
     @Override
     public void consultarCarga(CargaRequest request, StreamObserver<CargaResponse> responseObserver) {
         int cargaAtual = estoque.values().stream().mapToInt(Integer::intValue).sum();

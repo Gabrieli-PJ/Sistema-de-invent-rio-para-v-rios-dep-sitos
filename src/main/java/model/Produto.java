@@ -19,7 +19,6 @@ public class Produto {
         return nome;
     }
 
-    // Agora consulta o estoque diretamente, sem guardar quantidade local
     public int getQuantidade() {
         return EstoqueUtils.consultarEstoque(this.id);
     }
