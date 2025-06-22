@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option java_package = "inventario";
+option java_outer_classname = "Inventario";
+
+package inventario;
+
+// Mensagens para gerenciamento de estoque
+message EstoqueRequest {
+  string produto_id = 1;
+  int32 quantidade_desejada = 2;
+}
+
+message EstoqueResponse {
+  bool disponivel = 1;
+  int32 quantidade_atual = 2;
+}
+
+message AtualizacaoRequest {
+  string produto_id = 1;
+  int32 quantidade = 2; // positivo para adicionar, negativo para remover
+}
+
+message AtualizacaoResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+}
+
+message PedidoRequest {
+  string produto_id = 1;
+  int32 quantidade = 2;
+}
+
+message PedidoResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+  string deposito_responsavel = 3;
+}
+
+// Nova mensagem para carga atual do depósito
+message CargaRequest {}
+
+message CargaResponse {
+  int32 carga_atual = 1;
+}
+
+// Serviços gRPC
+
+service Warehouse {
+  rpc verificarEstoque(EstoqueRequest) returns (EstoqueResponse);
+  rpc atualizarEstoque(AtualizacaoRequest) returns (AtualizacaoResponse);
+  rpc consultarCarga(CargaRequest) returns (CargaResponse);
+}
+
+service OrderManager {
+  rpc fazerPedido(PedidoRequest) returns (PedidoResponse);
+  rpc adicionarEstoque(AtualizacaoRequest) returns (AtualizacaoResponse);
+  rpc removerEstoque(AtualizacaoRequest) returns (AtualizacaoResponse);
+}

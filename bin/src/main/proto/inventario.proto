@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package inventario;
+
+service OrderManager {
+  rpc FazerPedido (PedidoRequest) returns (PedidoResponse);
+}
+
+service Warehouse {
+  rpc VerificarEstoque (EstoqueRequest) returns (EstoqueResponse);
+  rpc AtualizarEstoque (AtualizacaoRequest) returns (AtualizacaoResponse);
+}
+
+message PedidoRequest {
+  string produtoId = 1;
+  int32 quantidade = 2;
+}
+
+message PedidoResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+  string depositoResponsavel = 3;
+}
+
+message EstoqueRequest {
+  string produtoId = 1;
+  int32 quantidadeDesejada = 2;
+}
+
+message EstoqueResponse {
+  bool disponivel = 1;
+  int32 quantidadeDisponivel = 2;
+}
+
+message AtualizacaoRequest {
+  string produtoId = 1;
+  int32 quantidade = 2;
+}
+
+message AtualizacaoResponse {
+  bool sucesso = 1;
+  string mensagem = 2;
+}

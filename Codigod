@@ -1,0 +1,13 @@
+*Abrir terminal (precisa ter o Maven instalado)*
+mvn clean compile dependency:copy-dependencies
+
+java -cp "target/classes;target/dependency/*" warehouse.Deposito1Server
+
+*Em outro terminal*
+java -cp "target/classes;target/dependency/*" warehouse.Deposito2Server
+
+*Em outro terminal*
+java -cp "target/classes;target/dependency/*" ordermanager.OrderManagerServer
+
+*Em outro terminal*
+java -cp "target/classes;target/dependency/*" ordermanager.OrderClientSimulator
