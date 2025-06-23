@@ -1,0 +1,8 @@
+=== Relatório de Estoque - Deposito2 ===
+- P456: 80 unidades
+- P123: 100 unidades
+- P789: 40 unidades
+
+=== Últimas Modificações ===
+- 2025-06-23T13:53:02.609491500 - [Deposito2] P123: 60 -> 110
+- 2025-06-23T13:53:12.432245800 - [Deposito2] P123: 110 -> 100

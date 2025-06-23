@@ -5,7 +5,6 @@ option java_outer_classname = "Inventario";
 
 package inventario;
 
-// Mensagens para gerenciamento de estoque
 message EstoqueRequest {
   string produto_id = 1;
   int32 quantidade_desejada = 2;
@@ -18,7 +17,7 @@ message EstoqueResponse {
 
 message AtualizacaoRequest {
   string produto_id = 1;
-  int32 quantidade = 2; // positivo para adicionar, negativo para remover
+  int32 quantidade = 2;
 }
 
 message AtualizacaoResponse {
@@ -37,19 +36,22 @@ message PedidoResponse {
   string deposito_responsavel = 3;
 }
 
-// Nova mensagem para carga atual do depósito
 message CargaRequest {}
-
 message CargaResponse {
   int32 carga_atual = 1;
 }
 
-// Serviços gRPC
+message RelatorioTextoRequest {}
+message RelatorioTextoResponse {
+  string nome_arquivo = 1;
+  string conteudo = 2;
+}
 
 service Warehouse {
   rpc verificarEstoque(EstoqueRequest) returns (EstoqueResponse);
   rpc atualizarEstoque(AtualizacaoRequest) returns (AtualizacaoResponse);
   rpc consultarCarga(CargaRequest) returns (CargaResponse);
+  rpc exportarRelatorioTexto(RelatorioTextoRequest) returns (RelatorioTextoResponse);
 }
 
 service OrderManager {

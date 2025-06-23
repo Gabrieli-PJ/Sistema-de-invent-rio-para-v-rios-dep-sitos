@@ -1,25 +1,26 @@
 package warehouse;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import inventario.Inventario.AtualizacaoRequest;
-import inventario.Inventario.AtualizacaoResponse;
-import inventario.Inventario.CargaRequest;
-import inventario.Inventario.CargaResponse;
-import inventario.Inventario.EstoqueRequest;
-import inventario.Inventario.EstoqueResponse;
+import inventario.Inventario;
+import inventario.Inventario.*;
 import inventario.WarehouseGrpc.WarehouseImplBase;
 import io.grpc.stub.StreamObserver;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.*;
 
 public class WarehouseServiceImpl extends WarehouseImplBase {
 
     private final String nomeDeposito;
     private final Map<String, Integer> estoque;
+    private final Deque<String> historico;
 
     public WarehouseServiceImpl(String nomeDeposito) {
         this.nomeDeposito = nomeDeposito;
         this.estoque = new HashMap<>();
+        this.historico = new ArrayDeque<>();
 
         switch (nomeDeposito) {
             case "Deposito1":
@@ -31,62 +32,73 @@ public class WarehouseServiceImpl extends WarehouseImplBase {
                 estoque.put("P456", 80);
                 estoque.put("P789", 40);
                 break;
-            default:
-                throw new IllegalArgumentException("Depósito desconhecido: " + nomeDeposito);
         }
     }
 
     @Override
     public void verificarEstoque(EstoqueRequest request, StreamObserver<EstoqueResponse> responseObserver) {
-        int quantidadeAtual = estoque.getOrDefault(request.getProdutoId(), 0);
-        boolean disponivel = quantidadeAtual >= request.getQuantidadeDesejada();
-
-        EstoqueResponse response = EstoqueResponse.newBuilder()
-                .setDisponivel(disponivel)
-                .setQuantidadeAtual(quantidadeAtual)
-                .build();
-
-        responseObserver.onNext(response);
+        int atual = estoque.getOrDefault(request.getProdutoId(), 0);
+        boolean disponivel = atual >= request.getQuantidadeDesejada();
+        responseObserver.onNext(EstoqueResponse.newBuilder().setDisponivel(disponivel).setQuantidadeAtual(atual).build());
         responseObserver.onCompleted();
     }
 
     @Override
     public void atualizarEstoque(AtualizacaoRequest request, StreamObserver<AtualizacaoResponse> responseObserver) {
         String produtoId = request.getProdutoId();
-        int quantidadeAtual = estoque.getOrDefault(produtoId, 0);
-        int novaQuantidade = quantidadeAtual + request.getQuantidade();
-
+        int atual = estoque.getOrDefault(produtoId, 0);
+        int novo = atual + request.getQuantidade();
         String mensagem;
         boolean sucesso;
 
-        if (novaQuantidade < 0) {
+        if (novo < 0) {
             sucesso = false;
-            mensagem = "Quantidade insuficiente no estoque para remover.";
+            mensagem = "Estoque insuficiente.";
         } else {
-            estoque.put(produtoId, novaQuantidade);
+            estoque.put(produtoId, novo);
             sucesso = true;
-            mensagem = (request.getQuantidade() > 0 ? "[+]" : "[-]") +
-                    " Estoque do produto " + produtoId + " atualizado. Quantidade atual: " + novaQuantidade + " no " + nomeDeposito;
+            mensagem = String.format("[%s] %s: %d -> %d", nomeDeposito, produtoId, atual, novo);
+            registrarHistorico(mensagem);
         }
 
-        AtualizacaoResponse response = AtualizacaoResponse.newBuilder()
-                .setSucesso(sucesso)
-                .setMensagem(mensagem)
-                .build();
-
-        responseObserver.onNext(response);
+        responseObserver.onNext(AtualizacaoResponse.newBuilder().setSucesso(sucesso).setMensagem(mensagem).build());
         responseObserver.onCompleted();
     }
 
     @Override
     public void consultarCarga(CargaRequest request, StreamObserver<CargaResponse> responseObserver) {
-        int cargaAtual = estoque.values().stream().mapToInt(Integer::intValue).sum();
-
-        CargaResponse response = CargaResponse.newBuilder()
-                .setCargaAtual(cargaAtual)
-                .build();
-
-        responseObserver.onNext(response);
+        int carga = estoque.values().stream().mapToInt(Integer::intValue).sum();
+        responseObserver.onNext(CargaResponse.newBuilder().setCargaAtual(carga).build());
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public void exportarRelatorioTexto(RelatorioTextoRequest request, StreamObserver<RelatorioTextoResponse> responseObserver) {
+        String nomeArquivo = nomeDeposito + "_relatorio.txt";
+        StringBuilder relatorio = new StringBuilder();
+
+        relatorio.append("=== Relatório de Estoque - ").append(nomeDeposito).append(" ===\n");
+        estoque.forEach((produto, qtd) -> relatorio.append(String.format("- %s: %d unidades\n", produto, qtd)));
+
+        relatorio.append("\n=== Últimas Modificações ===\n");
+        historico.forEach(entry -> relatorio.append("- ").append(entry).append("\n"));
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo))) {
+            writer.write(relatorio.toString());
+        } catch (IOException e) {
+            responseObserver.onError(e);
+            return;
+        }
+
+        responseObserver.onNext(RelatorioTextoResponse.newBuilder()
+            .setNomeArquivo(nomeArquivo)
+            .setConteudo(relatorio.toString())
+            .build());
+        responseObserver.onCompleted();
+    }
+
+    private void registrarHistorico(String msg) {
+        if (historico.size() == 5) historico.removeFirst();
+        historico.add(LocalDateTime.now() + " - " + msg);
     }
 }

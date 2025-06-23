@@ -108,6 +108,37 @@ public final class WarehouseGrpc {
     return getConsultarCargaMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<inventario.Inventario.RelatorioTextoRequest,
+      inventario.Inventario.RelatorioTextoResponse> getExportarRelatorioTextoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "exportarRelatorioTexto",
+      requestType = inventario.Inventario.RelatorioTextoRequest.class,
+      responseType = inventario.Inventario.RelatorioTextoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<inventario.Inventario.RelatorioTextoRequest,
+      inventario.Inventario.RelatorioTextoResponse> getExportarRelatorioTextoMethod() {
+    io.grpc.MethodDescriptor<inventario.Inventario.RelatorioTextoRequest, inventario.Inventario.RelatorioTextoResponse> getExportarRelatorioTextoMethod;
+    if ((getExportarRelatorioTextoMethod = WarehouseGrpc.getExportarRelatorioTextoMethod) == null) {
+      synchronized (WarehouseGrpc.class) {
+        if ((getExportarRelatorioTextoMethod = WarehouseGrpc.getExportarRelatorioTextoMethod) == null) {
+          WarehouseGrpc.getExportarRelatorioTextoMethod = getExportarRelatorioTextoMethod =
+              io.grpc.MethodDescriptor.<inventario.Inventario.RelatorioTextoRequest, inventario.Inventario.RelatorioTextoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "exportarRelatorioTexto"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  inventario.Inventario.RelatorioTextoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  inventario.Inventario.RelatorioTextoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WarehouseMethodDescriptorSupplier("exportarRelatorioTexto"))
+              .build();
+        }
+      }
+    }
+    return getExportarRelatorioTextoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -176,6 +207,13 @@ public final class WarehouseGrpc {
         io.grpc.stub.StreamObserver<inventario.Inventario.CargaResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getConsultarCargaMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void exportarRelatorioTexto(inventario.Inventario.RelatorioTextoRequest request,
+        io.grpc.stub.StreamObserver<inventario.Inventario.RelatorioTextoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportarRelatorioTextoMethod(), responseObserver);
+    }
   }
 
   /**
@@ -228,6 +266,14 @@ public final class WarehouseGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getConsultarCargaMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void exportarRelatorioTexto(inventario.Inventario.RelatorioTextoRequest request,
+        io.grpc.stub.StreamObserver<inventario.Inventario.RelatorioTextoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportarRelatorioTextoMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -265,6 +311,13 @@ public final class WarehouseGrpc {
     public inventario.Inventario.CargaResponse consultarCarga(inventario.Inventario.CargaRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getConsultarCargaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public inventario.Inventario.RelatorioTextoResponse exportarRelatorioTexto(inventario.Inventario.RelatorioTextoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportarRelatorioTextoMethod(), getCallOptions(), request);
     }
   }
 
@@ -307,11 +360,20 @@ public final class WarehouseGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getConsultarCargaMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<inventario.Inventario.RelatorioTextoResponse> exportarRelatorioTexto(
+        inventario.Inventario.RelatorioTextoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportarRelatorioTextoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_VERIFICAR_ESTOQUE = 0;
   private static final int METHODID_ATUALIZAR_ESTOQUE = 1;
   private static final int METHODID_CONSULTAR_CARGA = 2;
+  private static final int METHODID_EXPORTAR_RELATORIO_TEXTO = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -341,6 +403,10 @@ public final class WarehouseGrpc {
         case METHODID_CONSULTAR_CARGA:
           serviceImpl.consultarCarga((inventario.Inventario.CargaRequest) request,
               (io.grpc.stub.StreamObserver<inventario.Inventario.CargaResponse>) responseObserver);
+          break;
+        case METHODID_EXPORTAR_RELATORIO_TEXTO:
+          serviceImpl.exportarRelatorioTexto((inventario.Inventario.RelatorioTextoRequest) request,
+              (io.grpc.stub.StreamObserver<inventario.Inventario.RelatorioTextoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -381,6 +447,13 @@ public final class WarehouseGrpc {
               inventario.Inventario.CargaRequest,
               inventario.Inventario.CargaResponse>(
                 service, METHODID_CONSULTAR_CARGA)))
+        .addMethod(
+          getExportarRelatorioTextoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              inventario.Inventario.RelatorioTextoRequest,
+              inventario.Inventario.RelatorioTextoResponse>(
+                service, METHODID_EXPORTAR_RELATORIO_TEXTO)))
         .build();
   }
 
@@ -432,6 +505,7 @@ public final class WarehouseGrpc {
               .addMethod(getVerificarEstoqueMethod())
               .addMethod(getAtualizarEstoqueMethod())
               .addMethod(getConsultarCargaMethod())
+              .addMethod(getExportarRelatorioTextoMethod())
               .build();
         }
       }

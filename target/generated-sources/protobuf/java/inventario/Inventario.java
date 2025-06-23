@@ -38,10 +38,6 @@ public final class Inventario {
     int getQuantidadeDesejada();
   }
   /**
-   * <pre>
-   * Mensagens para gerenciamento de estoque
-   * </pre>
-   *
    * Protobuf type {@code inventario.EstoqueRequest}
    */
   public static final class EstoqueRequest extends
@@ -295,10 +291,6 @@ public final class Inventario {
       return builder;
     }
     /**
-     * <pre>
-     * Mensagens para gerenciamento de estoque
-     * </pre>
-     *
      * Protobuf type {@code inventario.EstoqueRequest}
      */
     public static final class Builder extends
@@ -1213,10 +1205,6 @@ public final class Inventario {
         getProdutoIdBytes();
 
     /**
-     * <pre>
-     * positivo para adicionar, negativo para remover
-     * </pre>
-     *
      * <code>int32 quantidade = 2;</code>
      * @return The quantidade.
      */
@@ -1300,10 +1288,6 @@ public final class Inventario {
     public static final int QUANTIDADE_FIELD_NUMBER = 2;
     private int quantidade_ = 0;
     /**
-     * <pre>
-     * positivo para adicionar, negativo para remover
-     * </pre>
-     *
      * <code>int32 quantidade = 2;</code>
      * @return The quantidade.
      */
@@ -1735,10 +1719,6 @@ public final class Inventario {
 
       private int quantidade_ ;
       /**
-       * <pre>
-       * positivo para adicionar, negativo para remover
-       * </pre>
-       *
        * <code>int32 quantidade = 2;</code>
        * @return The quantidade.
        */
@@ -1747,10 +1727,6 @@ public final class Inventario {
         return quantidade_;
       }
       /**
-       * <pre>
-       * positivo para adicionar, negativo para remover
-       * </pre>
-       *
        * <code>int32 quantidade = 2;</code>
        * @param value The quantidade to set.
        * @return This builder for chaining.
@@ -1763,10 +1739,6 @@ public final class Inventario {
         return this;
       }
       /**
-       * <pre>
-       * positivo para adicionar, negativo para remover
-       * </pre>
-       *
        * <code>int32 quantidade = 2;</code>
        * @return This builder for chaining.
        */
@@ -3867,10 +3839,6 @@ public final class Inventario {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
-   * <pre>
-   * Nova mensagem para carga atual do depósito
-   * </pre>
-   *
    * Protobuf type {@code inventario.CargaRequest}
    */
   public static final class CargaRequest extends
@@ -4052,10 +4020,6 @@ public final class Inventario {
       return builder;
     }
     /**
-     * <pre>
-     * Nova mensagem para carga atual do depósito
-     * </pre>
-     *
      * Protobuf type {@code inventario.CargaRequest}
      */
     public static final class Builder extends
@@ -4743,6 +4707,1103 @@ public final class Inventario {
 
   }
 
+  public interface RelatorioTextoRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:inventario.RelatorioTextoRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code inventario.RelatorioTextoRequest}
+   */
+  public static final class RelatorioTextoRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:inventario.RelatorioTextoRequest)
+      RelatorioTextoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RelatorioTextoRequest.newBuilder() to construct.
+    private RelatorioTextoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RelatorioTextoRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RelatorioTextoRequest();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return inventario.Inventario.internal_static_inventario_RelatorioTextoRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return inventario.Inventario.internal_static_inventario_RelatorioTextoRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              inventario.Inventario.RelatorioTextoRequest.class, inventario.Inventario.RelatorioTextoRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof inventario.Inventario.RelatorioTextoRequest)) {
+        return super.equals(obj);
+      }
+      inventario.Inventario.RelatorioTextoRequest other = (inventario.Inventario.RelatorioTextoRequest) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static inventario.Inventario.RelatorioTextoRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static inventario.Inventario.RelatorioTextoRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static inventario.Inventario.RelatorioTextoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(inventario.Inventario.RelatorioTextoRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code inventario.RelatorioTextoRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:inventario.RelatorioTextoRequest)
+        inventario.Inventario.RelatorioTextoRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return inventario.Inventario.internal_static_inventario_RelatorioTextoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return inventario.Inventario.internal_static_inventario_RelatorioTextoRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                inventario.Inventario.RelatorioTextoRequest.class, inventario.Inventario.RelatorioTextoRequest.Builder.class);
+      }
+
+      // Construct using inventario.Inventario.RelatorioTextoRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return inventario.Inventario.internal_static_inventario_RelatorioTextoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public inventario.Inventario.RelatorioTextoRequest getDefaultInstanceForType() {
+        return inventario.Inventario.RelatorioTextoRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public inventario.Inventario.RelatorioTextoRequest build() {
+        inventario.Inventario.RelatorioTextoRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public inventario.Inventario.RelatorioTextoRequest buildPartial() {
+        inventario.Inventario.RelatorioTextoRequest result = new inventario.Inventario.RelatorioTextoRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof inventario.Inventario.RelatorioTextoRequest) {
+          return mergeFrom((inventario.Inventario.RelatorioTextoRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(inventario.Inventario.RelatorioTextoRequest other) {
+        if (other == inventario.Inventario.RelatorioTextoRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:inventario.RelatorioTextoRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:inventario.RelatorioTextoRequest)
+    private static final inventario.Inventario.RelatorioTextoRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new inventario.Inventario.RelatorioTextoRequest();
+    }
+
+    public static inventario.Inventario.RelatorioTextoRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RelatorioTextoRequest>
+        PARSER = new com.google.protobuf.AbstractParser<RelatorioTextoRequest>() {
+      @java.lang.Override
+      public RelatorioTextoRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RelatorioTextoRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RelatorioTextoRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public inventario.Inventario.RelatorioTextoRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RelatorioTextoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:inventario.RelatorioTextoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string nome_arquivo = 1;</code>
+     * @return The nomeArquivo.
+     */
+    java.lang.String getNomeArquivo();
+    /**
+     * <code>string nome_arquivo = 1;</code>
+     * @return The bytes for nomeArquivo.
+     */
+    com.google.protobuf.ByteString
+        getNomeArquivoBytes();
+
+    /**
+     * <code>string conteudo = 2;</code>
+     * @return The conteudo.
+     */
+    java.lang.String getConteudo();
+    /**
+     * <code>string conteudo = 2;</code>
+     * @return The bytes for conteudo.
+     */
+    com.google.protobuf.ByteString
+        getConteudoBytes();
+  }
+  /**
+   * Protobuf type {@code inventario.RelatorioTextoResponse}
+   */
+  public static final class RelatorioTextoResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:inventario.RelatorioTextoResponse)
+      RelatorioTextoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RelatorioTextoResponse.newBuilder() to construct.
+    private RelatorioTextoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RelatorioTextoResponse() {
+      nomeArquivo_ = "";
+      conteudo_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RelatorioTextoResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return inventario.Inventario.internal_static_inventario_RelatorioTextoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return inventario.Inventario.internal_static_inventario_RelatorioTextoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              inventario.Inventario.RelatorioTextoResponse.class, inventario.Inventario.RelatorioTextoResponse.Builder.class);
+    }
+
+    public static final int NOME_ARQUIVO_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nomeArquivo_ = "";
+    /**
+     * <code>string nome_arquivo = 1;</code>
+     * @return The nomeArquivo.
+     */
+    @java.lang.Override
+    public java.lang.String getNomeArquivo() {
+      java.lang.Object ref = nomeArquivo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nomeArquivo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string nome_arquivo = 1;</code>
+     * @return The bytes for nomeArquivo.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNomeArquivoBytes() {
+      java.lang.Object ref = nomeArquivo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nomeArquivo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTEUDO_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object conteudo_ = "";
+    /**
+     * <code>string conteudo = 2;</code>
+     * @return The conteudo.
+     */
+    @java.lang.Override
+    public java.lang.String getConteudo() {
+      java.lang.Object ref = conteudo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        conteudo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string conteudo = 2;</code>
+     * @return The bytes for conteudo.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConteudoBytes() {
+      java.lang.Object ref = conteudo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        conteudo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nomeArquivo_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nomeArquivo_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conteudo_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, conteudo_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nomeArquivo_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nomeArquivo_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conteudo_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, conteudo_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof inventario.Inventario.RelatorioTextoResponse)) {
+        return super.equals(obj);
+      }
+      inventario.Inventario.RelatorioTextoResponse other = (inventario.Inventario.RelatorioTextoResponse) obj;
+
+      if (!getNomeArquivo()
+          .equals(other.getNomeArquivo())) return false;
+      if (!getConteudo()
+          .equals(other.getConteudo())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NOME_ARQUIVO_FIELD_NUMBER;
+      hash = (53 * hash) + getNomeArquivo().hashCode();
+      hash = (37 * hash) + CONTEUDO_FIELD_NUMBER;
+      hash = (53 * hash) + getConteudo().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static inventario.Inventario.RelatorioTextoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static inventario.Inventario.RelatorioTextoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static inventario.Inventario.RelatorioTextoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(inventario.Inventario.RelatorioTextoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code inventario.RelatorioTextoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:inventario.RelatorioTextoResponse)
+        inventario.Inventario.RelatorioTextoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return inventario.Inventario.internal_static_inventario_RelatorioTextoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return inventario.Inventario.internal_static_inventario_RelatorioTextoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                inventario.Inventario.RelatorioTextoResponse.class, inventario.Inventario.RelatorioTextoResponse.Builder.class);
+      }
+
+      // Construct using inventario.Inventario.RelatorioTextoResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        nomeArquivo_ = "";
+        conteudo_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return inventario.Inventario.internal_static_inventario_RelatorioTextoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public inventario.Inventario.RelatorioTextoResponse getDefaultInstanceForType() {
+        return inventario.Inventario.RelatorioTextoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public inventario.Inventario.RelatorioTextoResponse build() {
+        inventario.Inventario.RelatorioTextoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public inventario.Inventario.RelatorioTextoResponse buildPartial() {
+        inventario.Inventario.RelatorioTextoResponse result = new inventario.Inventario.RelatorioTextoResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(inventario.Inventario.RelatorioTextoResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nomeArquivo_ = nomeArquivo_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.conteudo_ = conteudo_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof inventario.Inventario.RelatorioTextoResponse) {
+          return mergeFrom((inventario.Inventario.RelatorioTextoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(inventario.Inventario.RelatorioTextoResponse other) {
+        if (other == inventario.Inventario.RelatorioTextoResponse.getDefaultInstance()) return this;
+        if (!other.getNomeArquivo().isEmpty()) {
+          nomeArquivo_ = other.nomeArquivo_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getConteudo().isEmpty()) {
+          conteudo_ = other.conteudo_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                nomeArquivo_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                conteudo_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object nomeArquivo_ = "";
+      /**
+       * <code>string nome_arquivo = 1;</code>
+       * @return The nomeArquivo.
+       */
+      public java.lang.String getNomeArquivo() {
+        java.lang.Object ref = nomeArquivo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nomeArquivo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string nome_arquivo = 1;</code>
+       * @return The bytes for nomeArquivo.
+       */
+      public com.google.protobuf.ByteString
+          getNomeArquivoBytes() {
+        java.lang.Object ref = nomeArquivo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nomeArquivo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string nome_arquivo = 1;</code>
+       * @param value The nomeArquivo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNomeArquivo(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        nomeArquivo_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nome_arquivo = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNomeArquivo() {
+        nomeArquivo_ = getDefaultInstance().getNomeArquivo();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nome_arquivo = 1;</code>
+       * @param value The bytes for nomeArquivo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNomeArquivoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        nomeArquivo_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object conteudo_ = "";
+      /**
+       * <code>string conteudo = 2;</code>
+       * @return The conteudo.
+       */
+      public java.lang.String getConteudo() {
+        java.lang.Object ref = conteudo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          conteudo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string conteudo = 2;</code>
+       * @return The bytes for conteudo.
+       */
+      public com.google.protobuf.ByteString
+          getConteudoBytes() {
+        java.lang.Object ref = conteudo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          conteudo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string conteudo = 2;</code>
+       * @param value The conteudo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConteudo(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        conteudo_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string conteudo = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConteudo() {
+        conteudo_ = getDefaultInstance().getConteudo();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string conteudo = 2;</code>
+       * @param value The bytes for conteudo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConteudoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        conteudo_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:inventario.RelatorioTextoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:inventario.RelatorioTextoResponse)
+    private static final inventario.Inventario.RelatorioTextoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new inventario.Inventario.RelatorioTextoResponse();
+    }
+
+    public static inventario.Inventario.RelatorioTextoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RelatorioTextoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<RelatorioTextoResponse>() {
+      @java.lang.Override
+      public RelatorioTextoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RelatorioTextoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RelatorioTextoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public inventario.Inventario.RelatorioTextoResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_inventario_EstoqueRequest_descriptor;
   private static final 
@@ -4783,6 +5844,16 @@ public final class Inventario {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_inventario_CargaResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_inventario_RelatorioTextoRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_inventario_RelatorioTextoRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_inventario_RelatorioTextoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_inventario_RelatorioTextoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4803,21 +5874,25 @@ public final class Inventario {
       "\022\n\nquantidade\030\002 \001(\005\"Q\n\016PedidoResponse\022\017\n" +
       "\007sucesso\030\001 \001(\010\022\020\n\010mensagem\030\002 \001(\t\022\034\n\024depo" +
       "sito_responsavel\030\003 \001(\t\"\016\n\014CargaRequest\"$" +
-      "\n\rCargaResponse\022\023\n\013carga_atual\030\001 \001(\0052\364\001\n" +
-      "\tWarehouse\022K\n\020verificarEstoque\022\032.inventa" +
-      "rio.EstoqueRequest\032\033.inventario.EstoqueR" +
-      "esponse\022S\n\020atualizarEstoque\022\036.inventario" +
-      ".AtualizacaoRequest\032\037.inventario.Atualiz" +
-      "acaoResponse\022E\n\016consultarCarga\022\030.inventa" +
-      "rio.CargaRequest\032\031.inventario.CargaRespo" +
-      "nse2\374\001\n\014OrderManager\022D\n\013fazerPedido\022\031.in" +
-      "ventario.PedidoRequest\032\032.inventario.Pedi" +
-      "doResponse\022S\n\020adicionarEstoque\022\036.inventa" +
-      "rio.AtualizacaoRequest\032\037.inventario.Atua" +
-      "lizacaoResponse\022Q\n\016removerEstoque\022\036.inve" +
-      "ntario.AtualizacaoRequest\032\037.inventario.A" +
-      "tualizacaoResponseB\030\n\ninventarioB\nInvent" +
-      "ariob\006proto3"
+      "\n\rCargaResponse\022\023\n\013carga_atual\030\001 \001(\005\"\027\n\025" +
+      "RelatorioTextoRequest\"@\n\026RelatorioTextoR" +
+      "esponse\022\024\n\014nome_arquivo\030\001 \001(\t\022\020\n\010conteud" +
+      "o\030\002 \001(\t2\325\002\n\tWarehouse\022K\n\020verificarEstoqu" +
+      "e\022\032.inventario.EstoqueRequest\032\033.inventar" +
+      "io.EstoqueResponse\022S\n\020atualizarEstoque\022\036" +
+      ".inventario.AtualizacaoRequest\032\037.inventa" +
+      "rio.AtualizacaoResponse\022E\n\016consultarCarg" +
+      "a\022\030.inventario.CargaRequest\032\031.inventario" +
+      ".CargaResponse\022_\n\026exportarRelatorioTexto" +
+      "\022!.inventario.RelatorioTextoRequest\032\".in" +
+      "ventario.RelatorioTextoResponse2\374\001\n\014Orde" +
+      "rManager\022D\n\013fazerPedido\022\031.inventario.Ped" +
+      "idoRequest\032\032.inventario.PedidoResponse\022S" +
+      "\n\020adicionarEstoque\022\036.inventario.Atualiza" +
+      "caoRequest\032\037.inventario.AtualizacaoRespo" +
+      "nse\022Q\n\016removerEstoque\022\036.inventario.Atual" +
+      "izacaoRequest\032\037.inventario.AtualizacaoRe" +
+      "sponseB\030\n\ninventarioB\nInventariob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4871,6 +5946,18 @@ public final class Inventario {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_inventario_CargaResponse_descriptor,
         new java.lang.String[] { "CargaAtual", });
+    internal_static_inventario_RelatorioTextoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_inventario_RelatorioTextoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_inventario_RelatorioTextoRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_inventario_RelatorioTextoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_inventario_RelatorioTextoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_inventario_RelatorioTextoResponse_descriptor,
+        new java.lang.String[] { "NomeArquivo", "Conteudo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
